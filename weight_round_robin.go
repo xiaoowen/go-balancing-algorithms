@@ -17,6 +17,10 @@ type WeightNode struct {
 	effectiveWeight int
 }
 
+func (r *WeightRoundRobinBalance) Name() string {
+	return "weight_round_robin"
+}
+
 func (r *WeightRoundRobinBalance) Add(params ...string) error {
 	if len(params) != 2 {
 		return errors.New("params len need 2")

@@ -11,6 +11,10 @@ type RandomBalance struct {
 	data     []string
 }
 
+func (r *RandomBalance) Name() string {
+	return "random"
+}
+
 func (r *RandomBalance) Add(params ...string) error {
 	if len(params) == 0 {
 		return errors.New("params len 1 at least")

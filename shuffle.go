@@ -10,6 +10,10 @@ type ShuffleBalance struct {
 	data []string
 }
 
+func (s *ShuffleBalance) Name() string {
+	return "shuffle"
+}
+
 func (s *ShuffleBalance) Add(params ...string) error {
 	if len(params) == 0 {
 		return errors.New("params len 1 at least")

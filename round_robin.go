@@ -7,6 +7,10 @@ type RoundRobinBalance struct {
 	data     []string
 }
 
+func (r *RoundRobinBalance) Name() string {
+	return "round_robin"
+}
+
 func (r *RoundRobinBalance) Add(params ...string) error {
 	if len(params) == 0 {
 		return errors.New("params len 1 at least")

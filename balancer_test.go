@@ -17,8 +17,8 @@ func TestBalancer(t *testing.T) {
 		Random, RoundRobin, WeightRoundRobin, Shuffle,
 	}
 	for _, strategy := range strategies {
-		log.Printf("balancer_strategy: %s\n", LBTypeName[strategy])
 		balancer := BalanceFactory(strategy)
+		log.Printf("balancer_strategy: %s\n", balancer.Name())
 		doBalance(balancer)
 	}
 }
